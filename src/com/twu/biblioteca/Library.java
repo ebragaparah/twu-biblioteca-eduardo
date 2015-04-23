@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Library {
     private ArrayList<Book> books;
@@ -23,5 +24,13 @@ public class Library {
             listOfBooks.add(book.getName());
         }
         return listOfBooks;
+    }
+
+    public ArrayList<ArrayList<Object>> listAllBooksDetailed() {
+        ArrayList<ArrayList<Object>> listOfBooksDetailed = new ArrayList<ArrayList<Object>>();
+        for(Book book: books) {
+            listOfBooksDetailed.add(book.getDetails());
+        }
+        return listOfBooksDetailed;
     }
 }

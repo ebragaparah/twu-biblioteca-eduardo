@@ -7,19 +7,25 @@ import org.junit.Before;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
-public class BookTest extends TestCase {
+public class BookTest {
     private Book book;
 
     @Before
     public void setUp() {
-        book = new Book("O Pequeno Principe", "John Doe", 2015);
+        book = new Book("Book1", "John Doe", 2015);
     }
 
-    public void testShouldReturnTrue() {
-        assertThat(book.getName(), is("O Pequeno Principe"));
+    @Test
+    public void ShouldReturnTrue() {
+        assertThat(book.getName(), is("Book1"));
         assertThat(book.getAuthor(), is("John Doe"));
         assertThat(book.getYearOfPublishment(), is(2015));
+    }
+
+    @Test
+    public void ShouldShowTheDetailsOfABook() {
+        assertThat(book.getDetails(), contains(new Object[]{"Book1", "John Doe", 2015}));
     }
 }

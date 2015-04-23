@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import org.hamcrest.Matcher;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,7 +31,9 @@ public class LibraryTest {
 
     @Test
     public void shouldListAllBooksDetailed() throws Exception {
-        ArrayList<Book> libraryBooks = library.getBooks();
-        assertThat(libraryBooks.size(), is(3));
+        ArrayList<Object> book1 = new ArrayList<Object>() {{ add("Book1"); add("John Doe"); add(1995); }};
+        ArrayList<Object> book2 = new ArrayList<Object>() {{ add("Book2"); add("John Doe"); add(1998); }};
+        ArrayList<Object> book3 = new ArrayList<Object>() {{ add("Book3"); add("John Doe"); add(2004); }};
+        assertThat(library.listAllBooksDetailed(), contains(new Object[] {book1, book2, book3}));
     }
 }
