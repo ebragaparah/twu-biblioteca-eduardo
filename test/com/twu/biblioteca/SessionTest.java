@@ -3,8 +3,6 @@ package com.twu.biblioteca;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
@@ -26,11 +24,5 @@ public class SessionTest {
     public void shouldShowWelcomeMessage() throws Exception {
         String welcomeMessage = app.welcomeMessage();
         assertThat(welcomeMessage, is("Welcome, Eduardo! The Library is available."));
-    }
-
-    @Test
-    public void shouldListAllBooks() throws Exception {
-        ArrayList<String> listOfBooks = app.listAllBooks();
-        assertThat(listOfBooks, contains("Book1", "Book2", "Book3"));
     }
 }

@@ -18,6 +18,8 @@ public class BookTest extends TestCase {
     }
 
     public void testShouldReturnTrue() {
-        assertThat(1, is(1));
+        assertThat(book.getName(), is("O Pequeno Principe"));
+        assertThat(book.getAuthor(), is("John Doe"));
+        assertThat(book.getYearOfPublishment(), is(2015));
     }
 }
