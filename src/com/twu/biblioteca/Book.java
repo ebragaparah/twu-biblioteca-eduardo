@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Book {
     private String name, author;
     private int yearOfPublishment;
@@ -20,5 +23,13 @@ public class Book {
 
     public int getYearOfPublishment() {
         return this.yearOfPublishment;
+    }
+
+    public ArrayList<Object> getDetails() {
+        ArrayList<Object> bookDetails = new ArrayList<Object>();
+        bookDetails.add(this.getName());
+        bookDetails.add(this.getAuthor());
+        bookDetails.add(this.getYearOfPublishment());
+        return bookDetails;
     }
 }
