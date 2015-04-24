@@ -17,11 +17,18 @@ public class MenuTest {
 
     @Test
     public void ShouldCheckTheMenuOptions() throws Exception {
-        assertThat(menu.getOptions().size(), is(2));
+        assertThat(menu.getSelectableOptions().size(), is(2));
+        assertThat(menu.getSelectableOptions(), contains(new String[]{"List Books", "Quit"}));
     }
 
     @Test
     public void ShouldPrintTheMenu() throws Exception {
         assertThat(menu.printMenu(), is("List Books\nQuit\n"));
+    }
+
+    @Test
+    public void ShouldCheckOptionEnteredIsValidOrInvalid() throws Exception {
+        assertThat(menu.ChoiceIsValid("List Books"), is(true));
+        assertThat(menu.ChoiceIsValid("List Musics"), is(false));
     }
 }

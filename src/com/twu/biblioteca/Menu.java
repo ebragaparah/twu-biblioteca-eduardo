@@ -1,26 +1,38 @@
 package com.twu.biblioteca;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Arrays;
 
 public class Menu {
-    private ArrayList<String> options;
+    private ArrayList<String> selectableOptions;
 
     public Menu() {
-        this.options = new ArrayList<String>();
+        this.selectableOptions = new ArrayList<String>();
     }
 
-    public ArrayList<String> getOptions() {
-        return this.options;
+    public ArrayList<String> getSelectableOptions() {
+        return this.selectableOptions;
     }
 
     public void addOptions(String option) {
-        this.options.add(option);
+        this.selectableOptions.add(option);
     }
 
     public String printMenu() {
         String menuString = "";
-        for(String item: options) {
+        for(String item: selectableOptions) {
             menuString += item + "\n";
         }
         return menuString;
+    }
+
+    public String getChoiceFromKeyboard() {
+        Scanner keyboard = new Scanner(System.in);
+        String choice = keyboard.nextLine();
+        return choice;
+    }
+
+    public boolean ChoiceIsValid(String choice) {
+        return this.selectableOptions.contains(choice);
     }
 }
