@@ -30,22 +30,22 @@ public class Session {
         this.sessionBooks.add(book);
     }
 
-    public String checkout(String book) {
-        int index = this.getIndexByName(book);
-        if(index != -1) {
-            this.sessionBooks.remove(this.getIndexByName(book));
+    public String checkout(String bookName) {
+        Book book = this.getBookByName(bookName);
+        if(book != null) {
+            this.sessionBooks.remove(book);
             return this.successfulCheckoutMessage();
         }else
             return this.unsuccessfulCheckoutMessage();
     }
 
-    private int getIndexByName(String name) {
+    private Book getBookByName(String name) {
         for(Book book: sessionBooks) {
             if(book.getName().equals(name)) {
-                return sessionBooks.indexOf(book);
+                return book;
             }
         }
-        return -1;
+        return null;
     }
 
     private String successfulCheckoutMessage() {
