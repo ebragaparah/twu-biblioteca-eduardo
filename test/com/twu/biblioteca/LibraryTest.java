@@ -11,13 +11,14 @@ import static org.hamcrest.Matchers.*;
 
 public class LibraryTest {
     private Library library;
+    private Book book1, book2, book3;
 
     @Before
     public void setUp() {
         library = new Library();
-        Book book1 = new Book("Book1", "John Doe", 1995);
-        Book book2 = new Book("Book2", "John Doe", 1998);
-        Book book3 = new Book("Book3", "John Doe", 2004);
+        book1 = new Book("Book1", "John Doe", 1995);
+        book2 = new Book("Book2", "John Doe", 1998);
+        book3 = new Book("Book3", "John Doe", 2004);
         library.registerBook(book1);
         library.registerBook(book2);
         library.registerBook(book3);
