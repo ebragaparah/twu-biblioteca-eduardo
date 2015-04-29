@@ -18,13 +18,4 @@ public class Movie extends Item {
     public int getRate() {
         return this.rate;
     }
-
-    public ArrayList<Object> getDetails() {
-        ArrayList<Object> bookDetails = new ArrayList<Object>();
-        bookDetails.add(this.getName());
-        bookDetails.add(this.getDirector());
-        bookDetails.add(this.getYear());
-        bookDetails.add(this.getRate());
-        return bookDetails;
-    }
 }

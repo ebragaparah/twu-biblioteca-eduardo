@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 import org.junit.Before;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
@@ -19,10 +20,5 @@ public class MovieTest {
         assertThat(movie.getDirector(), is("Spielberg"));
         assertThat(movie.getYear(), is(2015));
         assertThat(movie.getRate(), is(9));
-    }
-
-    @Test
-    public void ShouldShowTheDetailsOfAMovie() {
-        assertThat(movie.getDetails(), contains(new Object[]{"Avengers", "Spielberg", 2015, 9}));
     }
 }

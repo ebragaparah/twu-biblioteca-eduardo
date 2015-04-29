@@ -12,12 +12,4 @@ public class Book extends Item {
     public String getAuthor() {
         return this.author;
     }
-
-    public ArrayList<Object> getDetails() {
-        ArrayList<Object> bookDetails = new ArrayList<Object>();
-        bookDetails.add(this.getName());
-        bookDetails.add(this.getAuthor());
-        bookDetails.add(this.getYear());
-        return bookDetails;
-    }
 }
