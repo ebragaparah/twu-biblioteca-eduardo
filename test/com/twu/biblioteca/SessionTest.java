@@ -10,14 +10,16 @@ import static org.hamcrest.Matchers.*;
 
 public class SessionTest {
     private Library library;
+    private User user;
     private Session app;
     private Book book1, book2, book3;
     private Movie movie1, movie2, movie3;
 
     @Before
-    public void setUp() {
+    public void setUp() throws Exception {
         library = new Library();
-        app = new Session("Eduardo", library);
+        user = new User("001-0003", "abcdef", "Eduardo", "foo@bar.com", "9999-9888");
+        app = new Session(user, library);
         book1 = new Book("Book1", "John Doe", 1995);
         book2 = new Book("Book2", "John Doe", 1998);
         book3 = new Book("Book3", "John Doe", 2004);
@@ -83,16 +85,16 @@ public class SessionTest {
 
     @Test
     public void displaysSuccessfulCheckoutMessage() throws Exception {
-        assertThat(library.checkout("Book1", app), is("Thank you! Enjoy the book."));
+        assertThat(library.checkout("Book1", app), is("Thank you, Eduardo! Enjoy the book."));
     }
 
     @Test
     public void displaysUnsuccessfulCheckoutMessage() throws Exception {
-        assertThat(library.checkout("Book4", app), is("The book is not available."));
+        assertThat(library.checkout("Book4", app), is("Sorry, Eduardo. The book is not available."));
     }
 
     @Test
     public void failsTheReturnOfBookThatWasntBorrowed() throws Exception {
-        assertThat(library.returnItem("Book5", app), is("That is not a valid book to return."));
+        assertThat(library.returnItem("Book5", app), is("Sorry, Eduardo. That is not a valid book to return."));
     }
 }

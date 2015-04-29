@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Session {
     private Library library;
-    private String user;
+    private User user;
     private ArrayList<Book> books;
     private ArrayList<Movie> movies;
 
-    public Session(String user, Library library) {
+    public Session(User user, Library library) {
         this.library = library;
         this.library.setSessions(this);
         this.user = user;
@@ -23,6 +23,8 @@ public class Session {
     public ArrayList<Movie> getMovies() {
         return this.movies;
     }
+
+    public User getUser() { return this.user; }
 
     public void addItem(Item item) {
         if(item instanceof Book){
@@ -45,9 +47,9 @@ public class Session {
         if(item != null) {
             this.library.addItem(item);
             this.removeItem(item);
-            return Message.successfulReturnMessage();
+            return Message.successfulReturnMessage(this.user.getName());
         } else {
-            return Message.unsuccessfulReturnMessage();
+            return Message.unsuccessfulReturnMessage(this.user.getName());
         }
     }
 
@@ -80,6 +82,6 @@ public class Session {
     }
 
     public String welcomeMessage() {
-        return Message.welcomeMessage(this.user);
+        return Message.welcomeMessage(this.user.getName());
     }
 }
