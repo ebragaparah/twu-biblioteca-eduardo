@@ -98,9 +98,9 @@ public class Library {
         if(item != null) {
             session.addItem(item);
             this.removeItem(item);
-            return Message.successfulCheckoutMessage();
+            return Message.successfulCheckoutMessage(session.getUser().getName());
         } else {
-            return Message.unsuccessfulCheckoutMessage();
+            return Message.unsuccessfulCheckoutMessage(session.getUser().getName());
         }
     }
 

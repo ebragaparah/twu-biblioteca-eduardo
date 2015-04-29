@@ -13,12 +13,12 @@ public class BibliotecaApp {
 //        String email = keyboard.nextLine();
 //        String username = keyboard.nextLine();
 //        String username = keyboard.nextLine();
-        User user = new User("", "", "", "", "");
-        Session session = new Session("", library);
-        menu.addOptions("Listar Livros");
-        menu.addOptions("Listar Filmes");
-        do {
-            menu.printMenu();
-        } while (menu.ChoiceIsValid(menu.getChoiceFromKeyboard()));
+//        User user = new User("", "", "", "", "");
+//        Session session = new Session("", library);
+//        menu.addOptions("Listar Livros");
+//        menu.addOptions("Listar Filmes");
+//        do {
+//            menu.printMenu();
+//        } while (menu.ChoiceIsValid(menu.getChoiceFromKeyboard()));
     }
 }
