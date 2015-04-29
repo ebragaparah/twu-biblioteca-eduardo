@@ -1,7 +1,5 @@
 package com.twu.biblioteca;
 
-import org.hamcrest.Matcher;
-import org.hamcrest.Matchers;
 import org.junit.Before;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -18,14 +16,9 @@ public class BookTest {
     }
 
     @Test
-    public void ShouldReturnTrue() {
+    public void checksBookAttributes() {
         assertThat(book.getName(), is("Book1"));
         assertThat(book.getAuthor(), is("John Doe"));
-        assertThat(book.getYearOfPublishment(), is(2015));
-    }
-
-    @Test
-    public void ShouldShowTheDetailsOfABook() {
-        assertThat(book.getDetails(), contains(new Object[]{"Book1", "John Doe", 2015}));
+        assertThat(book.getYear(), is(2015));
     }
 }
