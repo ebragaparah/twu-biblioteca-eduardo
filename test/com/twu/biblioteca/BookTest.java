@@ -1,11 +1,10 @@
 package com.twu.biblioteca;
 
+import org.junit.Test;
 import org.junit.Before;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
-
-import org.junit.Test;
 
 public class BookTest {
     private Book book;
