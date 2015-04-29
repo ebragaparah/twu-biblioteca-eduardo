@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class Menu {
     private ArrayList<String> selectableOptions;
@@ -19,10 +18,12 @@ public class Menu {
     }
 
     public String printMenu() {
+        System.out.println("Escolha uma das opcoes do menu abaixo:\n");
         String menuString = "";
         for(String item: selectableOptions) {
             menuString += item + "\n";
         }
+        System.out.println(menuString);
         return menuString;
     }
 
